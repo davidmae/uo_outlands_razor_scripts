@@ -1,0 +1,22 @@
+// Script: Attack and Hide Loop
+// Descripción: Loop continuo de atacar y esconderse - ideal para entrenamiento o PvP
+// Autor: Claude
+// Uso: Establece un objetivo primero, luego ejecuta el script. Para detener, presiona Stop Macro
+
+// Loop infinito
+while true
+    // Atacar al último objetivo
+    attack last
+
+    // Esperar para que el ataque se registre
+    pause 500
+
+    // Activar habilidad Hiding
+    useskill 'Hiding'
+
+    // Esperar cooldown de hiding (aprox 10 segundos)
+    pause 10000
+
+    // Mensaje indicando que se va a atacar de nuevo
+    overhead 'Atacando...' 58
+endwhile

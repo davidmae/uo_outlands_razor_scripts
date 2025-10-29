@@ -1,0 +1,35 @@
+// Script: Smart Attack and Hide
+// Descripción: Ataca y se esconde, con verificación de salud
+// Autor: Claude
+// Uso: Establece objetivo y ejecuta. Se detendrá si tu salud es muy baja
+
+// Verificar salud antes de atacar
+if hp < 30
+    overhead '¡Salud muy baja!' 33
+    stop
+endif
+
+// Atacar al último objetivo
+attack last
+
+// Esperar para que el ataque se registre
+pause 250
+
+// Verificar si el enemigo está muerto
+if not targetexists 'enemy'
+    overhead 'Objetivo eliminado' 88
+    stop
+endif
+
+// Activar habilidad Hiding
+useskill 'Hiding'
+
+// Esperar a que Hiding tenga efecto
+pause 1000
+
+// Mensaje de confirmación
+if hidden
+    overhead 'Oculto con éxito!' 88
+else
+    overhead 'Hiding falló' 33
+endif
